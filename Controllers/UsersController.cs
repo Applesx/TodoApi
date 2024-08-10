@@ -2,16 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 
 [Route("api/[controller]")]
 [ApiController]
+
 public class UsersController : ControllerBase
 {
     private readonly ApplicationDbContext _context;
@@ -93,13 +90,13 @@ public class UsersController : ControllerBase
 // DTOs for registration and login
 public class UserRegistrationDto
 {
-    public string Name { get; set; }
-    public string Email { get; set; }
-    public string Password { get; set; }
+    public string? Name { get; set; }
+    public string? Email { get; set; }
+    public string? Password { get; set; }
 }
 
 public class UserLoginDto
 {
-    public string Email { get; set; }
-    public string Password { get; set; }
+    public string? Email { get; set; }
+    public string? Password { get; set; }
 }
